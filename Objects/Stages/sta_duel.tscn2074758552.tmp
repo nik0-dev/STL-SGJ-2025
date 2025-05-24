@@ -9,23 +9,19 @@
 
 [node name="DarkRoom" type="ColorRect" parent="Backdrop"]
 offset_left = 1.0
-offset_right = 2168.0
-offset_bottom = 1272.0
+offset_right = 1919.0
+offset_bottom = 1077.0
 color = Color(0, 0, 0, 1)
 
 [node name="Table" type="ColorRect" parent="Backdrop"]
-offset_left = 2.0
-offset_top = 755.0
-offset_right = 2177.0
-offset_bottom = 1275.0
+offset_left = -28.0
+offset_top = 474.0
+offset_right = 1945.0
+offset_bottom = 1085.0
 color = Color(0.791999, 0.791999, 0.791999, 1)
 
 [node name="ObjPlayer" parent="." instance=ExtResource("1_78ngm")]
 position = Vector2(956, 541)
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(-16, 1)
-limit_left = 0
-limit_top = 0
-limit_smoothed = true
 script = ExtResource("2_lcri2")

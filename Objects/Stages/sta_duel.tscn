@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://d33xn8ywf0g7f"]
+[gd_scene load_steps=2 format=3 uid="uid://d33xn8ywf0g7f"]
+
+[ext_resource type="PackedScene" uid="uid://pkay0a1om4p3" path="res://Objects/Player/obj_player.tscn" id="1_78ngm"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -6,13 +8,16 @@
 
 [node name="DarkRoom" type="ColorRect" parent="Backdrop"]
 offset_left = 1.0
-offset_right = 1152.0
-offset_bottom = 647.0
+offset_right = 1919.0
+offset_bottom = 1077.0
 color = Color(0, 0, 0, 1)
 
 [node name="Table" type="ColorRect" parent="Backdrop"]
-offset_left = 2.0
-offset_top = 233.0
-offset_right = 1152.0
-offset_bottom = 647.0
+offset_left = -28.0
+offset_top = 474.0
+offset_right = 1945.0
+offset_bottom = 1085.0
 color = Color(0.791999, 0.791999, 0.791999, 1)
+
+[node name="ObjPlayer" parent="." instance=ExtResource("1_78ngm")]
+position = Vector2(956, 541)

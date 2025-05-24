@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://pkay0a1om4p3"]
+[gd_scene load_steps=3 format=3 uid="uid://pkay0a1om4p3"]
+
+[ext_resource type="Script" uid="uid://dh5mwavtdjh44" path="res://Objects/Player/obj_player.gd" id="1_ih7l3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8irqe"]
 
 [node name="ObjPlayer" type="Node2D"]
+script = ExtResource("1_ih7l3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8irqe")

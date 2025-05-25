@@ -5,6 +5,7 @@ class_name CardBase extends Resource
 @export_multiline var description: String = ""
 @export var image: Texture2D = Texture2D.new()
 @export var color: Color = Color.WHITE
+@export var target_type: Constants.TargetType = Constants.TargetType.None
 
 @export_group("Duration")
 # consumes card after it is activated

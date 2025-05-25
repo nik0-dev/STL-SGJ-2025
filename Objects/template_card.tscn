@@ -1,4 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu28jmi2shbnf"]
+[gd_scene load_steps=24 format=3 uid="uid://bu28jmi2shbnf"]
+
+[ext_resource type="Script" uid="uid://dkd4tc0uoil1p" path="res://Scripts/card_flipper.gd" id="1_c4fu1"]
+[ext_resource type="Script" uid="uid://ce1q5kphlvo4r" path="res://Scripts/card.gd" id="1_r2545"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv45m"]
 bg_color = Color(1, 1, 1, 1)
@@ -49,6 +52,28 @@ font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_tfrst"]
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2545"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wd0vl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpewa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_slvil"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v3h6j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1n4c5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1o2d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uvs3r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_224sy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5s5d0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g1q3b"]
 
 [sub_resource type="Animation" id="Animation_c4fu1"]
 length = 0.001
@@ -247,6 +272,7 @@ _data = {
 }
 
 [node name="TemplateCard" type="Node2D"]
+script = ExtResource("1_r2545")
 
 [node name="Container" type="Control" parent="."]
 custom_minimum_size = Vector2(250, 350)
@@ -263,6 +289,7 @@ offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(125, 175)
+script = ExtResource("1_c4fu1")
 
 [node name="CardVisual" type="Panel" parent="Container"]
 layout_mode = 1
@@ -337,7 +364,32 @@ label_settings = SubResource("LabelSettings_tfrst")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Button" type="Button" parent="Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -18.0
+offset_right = 19.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r2545")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wd0vl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dpewa")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_slvil")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_v3h6j")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_1n4c5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i1o2d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_uvs3r")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_224sy")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5s5d0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g1q3b")
+flat = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_c4fu1")
 }

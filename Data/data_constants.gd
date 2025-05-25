@@ -28,3 +28,8 @@ enum BattleEvents {
 	DamageTaken,
 	BattleComplete
 }
+
+enum CardSide {
+	Front,
+	Back
+}

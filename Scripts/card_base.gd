@@ -3,7 +3,7 @@ class_name CardBase extends Resource
 @export_group("General")
 @export var name: String = ""
 @export_multiline var description: String = ""
-@export var image: Texture2D = Texture2D.new()
+@export var image: Texture2D = null
 @export var color: Color = Color.WHITE
 @export var tags: Array[String]
 @export var flavor_text: String

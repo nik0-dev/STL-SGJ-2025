@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardBase" load_steps=2 format=3 uid="uid://bfpefd0at34d0"]
+
+[ext_resource type="Script" uid="uid://dpkrvu1818fgq" path="res://Scripts/card_base.gd" id="1_u6hvu"]
+
+[resource]
+script = ExtResource("1_u6hvu")
+name = "Attack I"
+description = ""
+color = Color(1, 1, 1, 1)
+tags = Array[String]([])
+flavor_text = ""
+target_type = 0
+process_on_event = Dictionary[int, bool]({})
+one_time_activation = true
+permanent = false
+allowed_activations = 0
+use_lifetime = false
+lifetime = 0
+metadata/_custom_type_script = "uid://dpkrvu1818fgq"

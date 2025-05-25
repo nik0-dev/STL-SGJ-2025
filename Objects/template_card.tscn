@@ -1,6 +1,5 @@
-[gd_scene load_steps=24 format=3 uid="uid://bu28jmi2shbnf"]
+[gd_scene load_steps=23 format=3 uid="uid://bu28jmi2shbnf"]
 
-[ext_resource type="Script" uid="uid://dkd4tc0uoil1p" path="res://Scripts/card_flipper.gd" id="1_c4fu1"]
 [ext_resource type="Script" uid="uid://ce1q5kphlvo4r" path="res://Scripts/card.gd" id="1_r2545"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv45m"]
@@ -289,7 +288,6 @@ offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(125, 175)
-script = ExtResource("1_c4fu1")
 
 [node name="CardVisual" type="Panel" parent="Container"]
 layout_mode = 1

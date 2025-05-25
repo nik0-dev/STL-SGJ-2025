@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu28jmi2shbnf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv45m"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+shadow_color = Color(0, 0, 0, 0.282353)
+shadow_size = 1
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfrst"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_offset = Vector2(5, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wd0vl"]
+font_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd0vl"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.282353)
+shadow_size = 1
+shadow_offset = Vector2(5, 5)
+
+[node name="TemplateCard" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -178.0
+offset_right = 127.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cv45m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tfrst")
+text = "CARD_NAME"
+label_settings = SubResource("LabelSettings_wd0vl")
+horizontal_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ImageHolder" type="Panel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_wd0vl")
+
+[node name="ImagePlaceholder" type="Label" parent="Panel/VBoxContainer/ImageHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tfrst")
+text = "CARD_IMAGE"
+label_settings = SubResource("LabelSettings_wd0vl")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Image" type="TextureRect" parent="Panel/VBoxContainer/ImageHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Flavor" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tfrst")
+text = "CARD_FLAVOR"
+label_settings = SubResource("LabelSettings_wd0vl")
+horizontal_alignment = 1
+clip_text = true
+text_overrun_behavior = 3

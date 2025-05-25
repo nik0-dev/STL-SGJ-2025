@@ -5,4 +5,4 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="TemplateCard" parent="." instance=ExtResource("1_tj2cq")]
-position = Vector2(248, 266)
+position = Vector2(496, 256)

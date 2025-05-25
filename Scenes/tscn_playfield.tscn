@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf5tc0su7a3f7"]
+
+[ext_resource type="PackedScene" uid="uid://bu28jmi2shbnf" path="res://Objects/obj_template_card.tscn" id="1_2bq7k"]
+
+[node name="TscnPlayfield" type="Node2D"]
+
+[node name="TemplateCard" parent="." instance=ExtResource("1_2bq7k")]
+position = Vector2(280, 370)
+scale = Vector2(0.25, 0.25)
+
+[node name="TemplateCard2" parent="." instance=ExtResource("1_2bq7k")]
+position = Vector2(583, 369)
+scale = Vector2(0.25, 0.25)
+
+[node name="TemplateCard3" parent="." instance=ExtResource("1_2bq7k")]
+position = Vector2(500, 367)
+scale = Vector2(0.25, 0.25)
+
+[node name="TemplateCard4" parent="." instance=ExtResource("1_2bq7k")]
+position = Vector2(423, 367)
+scale = Vector2(0.25, 0.25)
+
+[node name="TemplateCard5" parent="." instance=ExtResource("1_2bq7k")]
+position = Vector2(350, 370)
+scale = Vector2(0.25, 0.25)

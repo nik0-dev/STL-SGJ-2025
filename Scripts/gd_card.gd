@@ -19,13 +19,14 @@ func _ready() -> void:
 	button.pressed.connect(flip)
 
 func flip():
-	match side:
-		Constants.CardSide.Front: 
-			animation_player.play("flip_to_back")
-			side = Constants.CardSide.Back
-		Constants.CardSide.Back:
-			animation_player.play("flip_to_front")
-			side = Constants.CardSide.Front
+	if !animation_player.is_playing():
+		match side:
+			Constants.CardSide.Front: 
+				animation_player.play("flip_to_back")
+				side = Constants.CardSide.Back
+			Constants.CardSide.Back:
+				animation_player.play("flip_to_front")
+				side = Constants.CardSide.Front
 
 func add_tag(tag: String): 
 	data.tags.append(tag)

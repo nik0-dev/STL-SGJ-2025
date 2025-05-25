@@ -15,12 +15,11 @@ expand_margin_left = 20.0
 expand_margin_top = 20.0
 expand_margin_right = 20.0
 expand_margin_bottom = 20.0
-shadow_color = Color(0, 0, 0, 0.282353)
-shadow_size = 1
-shadow_offset = Vector2(5, 5)
 anti_aliasing = false
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfrst"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4fu1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wd0vl"]
 bg_color = Color(0, 0, 0, 1)
@@ -284,7 +283,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(125, 175)
-theme_override_styles/panel = SubResource("StyleBoxEmpty_tfrst")
+theme_override_styles/panel = SubResource("StyleBoxFlat_c4fu1")
 
 [node name="Front" type="VBoxContainer" parent="Container/CardContents"]
 layout_mode = 1

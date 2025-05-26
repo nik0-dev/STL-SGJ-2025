@@ -10,7 +10,7 @@ class_name CardBase extends Resource
 
 @export_group("Battle")
 @export var target_type: Constants.TargetType = Constants.TargetType.None
-@export var process_on_event: Dictionary[Constants.BattleEvents, bool]
+@export var process_on_event: Dictionary[BattleManager.EventType, bool]
 # consumes card after it is activated
 @export var one_time_activation: bool = true
 # unlimited activations

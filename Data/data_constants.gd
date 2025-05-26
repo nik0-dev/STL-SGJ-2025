@@ -13,22 +13,6 @@ enum BattlerType {
 	Enemy
 }
 
-enum BattleEvents {
-	BattleStart,
-	CardsReplenished,
-	CardsDepleted,
-	TurnStart,
-	CardEffectActivated,
-	CardPlayed,
-	TurnEnd,
-	Healed,
-	Defending,
-	CardResolved,
-	DamageDealt,
-	DamageTaken,
-	BattleComplete
-}
-
 enum CardSide {
 	Front,
 	Back

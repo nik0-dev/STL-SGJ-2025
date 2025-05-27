@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkqv6ne2ag51p"]
+[gd_scene load_steps=2 format=3 uid="uid://bkqv6ne2ag51p"]
 
-[ext_resource type="Script" uid="uid://bg0fg63th0kjw" path="res://Scripts/dev_izzy.gd" id="1_qh2f0"]
 [ext_resource type="PackedScene" uid="uid://bu28jmi2shbnf" path="res://Objects/obj_template_card.tscn" id="1_tj2cq"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_qh2f0")
 
 [node name="TemplateCard" parent="." instance=ExtResource("1_tj2cq")]
 position = Vector2(620, 251)

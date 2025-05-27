@@ -38,6 +38,7 @@ func _ready():
 	_connect_signals()
 	_add_base_commands()
 	if _use_fallback_key && _echo_cfg_logs: broadcast_warning(_get_md_no_mapping_warning())
+	Console.hide()
 	
 func _add_base_commands():
 	suppress_cmd_cfg_logs()
@@ -234,6 +235,7 @@ func _handle_input_submission(text: String):
 		interface.input.clear()
 		log_msg("[i]%s[/i]" % text )
 		process_cmd(text.c_unescape())
+	interface.input.call_deferred("grab_focus")
 	
 func _input(event):
 	if _use_fallback_key:

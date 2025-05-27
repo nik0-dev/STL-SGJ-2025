@@ -1,11 +1,4 @@
-class_name Constants
-
-enum TargetType {
-	None,
-	Self,
-	Enemy,
-	All
-}
+class_name Data
 
 enum BattlerType {
 	None,
@@ -16,4 +9,11 @@ enum BattlerType {
 enum CardSide {
 	Front,
 	Back
+}
+
+enum TargetType {
+	None,
+	Self,
+	Enemy,
+	All
 }

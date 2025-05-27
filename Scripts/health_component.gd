@@ -1,11 +1,11 @@
-class_name HealthComponent extends Node
+class_name HealthComponent extends Object
 
 signal damage_taken(int)
 signal healed(int)
 signal health_changed(int)
 signal health_depleted
 
-@export var max_health : int = 0
+var max_health : int = 0
 var health: int:
 	set(value): 
 		health = clamp(value, 0, max_health)

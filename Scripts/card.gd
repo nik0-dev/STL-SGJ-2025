@@ -1,14 +1,22 @@
 class_name Card extends Node2D
 
-var data: CardBase:
+var data: CardMetadata:
 	set(value):
-		image_placeholder.text = value.name
 		if value.image != null:
 			image.texture = value.image
+		data = value
+	get:
+		return data
 		
 var process_events: Dictionary[BattleManager.EventType, Callable]
-var ownership: Constants.BattlerType = Constants.BattlerType.None
-var side: Constants.CardSide = Constants.CardSide.Front
+@export var ownership: Data.BattlerType = Data.BattlerType.None
+var side: Data.CardSide = Data.CardSide.Front:
+	set(value):
+		if side != value:
+			flip()
+			side = value
+	get:
+		return side
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var button: Button = $Container/Button
@@ -18,6 +26,7 @@ var side: Constants.CardSide = Constants.CardSide.Front
 func _ready() -> void:
 	image.visible = false if data != null && data.image == null else true
 	button.pressed.connect(flip)
+	
 	BattleManager.event_triggered.connect(
 		func(event: BattleManager.EventType):
 			if process_events.has(event):
@@ -27,12 +36,12 @@ func _ready() -> void:
 func flip():
 	if !animation_player.is_playing():
 		match side:
-			Constants.CardSide.Front: 
+			Data.CardSide.Front: 
 				animation_player.play("flip_to_back")
-				side = Constants.CardSide.Back
-			Constants.CardSide.Back:
+				side = Data.CardSide.Back
+			Data.CardSide.Back:
 				animation_player.play("flip_to_front")
-				side = Constants.CardSide.Front
+				side = Data.CardSide.Front
 
 func add_tag(tag: String): 
 	data.tags.append(tag)

@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf5tc0su7a3f7"]
+[gd_scene load_steps=3 format=3 uid="uid://bf5tc0su7a3f7"]
 
 [ext_resource type="PackedScene" uid="uid://bu28jmi2shbnf" path="res://Objects/obj_template_card.tscn" id="1_2bq7k"]
+[ext_resource type="Script" uid="uid://ce1q5kphlvo4r" path="res://Scripts/card.gd" id="2_vr385"]
 
 [node name="TscnPlayfield" type="Node2D"]
 
 [node name="TemplateCard" parent="." instance=ExtResource("1_2bq7k")]
 position = Vector2(280, 370)
 scale = Vector2(0.25, 0.25)
+script = ExtResource("2_vr385")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+playback_type = 1

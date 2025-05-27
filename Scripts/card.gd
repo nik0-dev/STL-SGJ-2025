@@ -1,5 +1,7 @@
 class_name Card extends Node2D
 
+const FLIP_SOUND : AudioStream = preload("res://Audio/card_flip.ogg")
+
 var data: CardMetadata:
 	set(value):
 		if value.image != null:
@@ -24,6 +26,7 @@ var side: Data.CardSide = Data.CardSide.Front:
 @onready var image: TextureRect = $Container/CardContents/Front/ImageHolder/Image
 
 func _ready() -> void:
+	side = Data.CardSide.Back
 	image.visible = false if data != null && data.image == null else true
 	button.pressed.connect(flip)
 	
@@ -42,6 +45,7 @@ func flip():
 			Data.CardSide.Back:
 				animation_player.play("flip_to_front")
 				side = Data.CardSide.Front
+		AudioManager.play_audio_random_pitch(FLIP_SOUND, 0.85, 1.2)
 
 func add_tag(tag: String): 
 	data.tags.append(tag)

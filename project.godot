@@ -19,6 +19,7 @@ config/icon="res://Art/img_icon.svg"
 
 Console="*res://addons/monodark/resources/scripts/console.gd"
 BattleManager="*res://Scripts/battle_manager.gd"
+AudioManager="*res://Scripts/audio_manager.gd"
 
 [editor_plugins]
 

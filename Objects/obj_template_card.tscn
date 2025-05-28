@@ -1,4 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://bu28jmi2shbnf"]
+[gd_scene load_steps=23 format=3 uid="uid://bu28jmi2shbnf"]
+
+[ext_resource type="Script" uid="uid://ce1q5kphlvo4r" path="res://Scripts/card.gd" id="1_poweq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv45m"]
 bg_color = Color(1, 1, 1, 1)
@@ -270,6 +272,7 @@ _data = {
 }
 
 [node name="TemplateCard" type="Node2D"]
+script = ExtResource("1_poweq")
 
 [node name="Container" type="Control" parent="."]
 custom_minimum_size = Vector2(250, 350)
@@ -285,6 +288,7 @@ offset_right = 125.0
 offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(125, 175)
 
 [node name="CardVisual" type="Panel" parent="Container"]

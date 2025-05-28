@@ -1,87 +1,92 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf5tc0su7a3f7"]
+[gd_scene load_steps=3 format=3 uid="uid://bf5tc0su7a3f7"]
 
 [ext_resource type="Script" uid="uid://baotjuk56w6ds" path="res://Scripts/array_tool_script_node2d.gd" id="1_2bq7k"]
+[ext_resource type="Script" uid="uid://bir6hglg6dbcj" path="res://Scripts/playfield.gd" id="1_vr385"]
 
-[node name="TscnPlayfield" type="Node2D"]
+[node name="TscnPlayfield" type="Node2D" node_paths=PackedStringArray("matching_array")]
+script = ExtResource("1_vr385")
+matching_array = NodePath("MatchingArea")
 
 [node name="DummyMarker" type="Marker2D" parent="."]
+position = Vector2(2, 0)
 
 [node name="MatchingArea" type="Node" parent="." node_paths=PackedStringArray("instance_node")]
 script = ExtResource("1_2bq7k")
 instance_node = NodePath("../DummyMarker")
 dimensions = Vector2i(5, 5)
-spacing = 50
+spacing = 200
 
-[node name="Marker2D - (0, 0)2" type="Marker2D" parent="MatchingArea"]
+[node name="Marker2D - (0, 0)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(552, 124)
 
-[node name="Marker2D - (0, 1)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(0, 50)
+[node name="Marker2D - (0, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(552, 324)
 
-[node name="Marker2D - (0, 2)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(0, 100)
+[node name="Marker2D - (0, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(552, 524)
 
-[node name="Marker2D - (0, 3)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(0, 150)
+[node name="Marker2D - (0, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(552, 724)
 
-[node name="Marker2D - (0, 4)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(0, 200)
+[node name="Marker2D - (0, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(552, 924)
 
-[node name="Marker2D - (1, 0)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(50, 0)
+[node name="Marker2D - (1, 0)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(752, 124)
 
-[node name="Marker2D - (1, 1)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(50, 50)
+[node name="Marker2D - (1, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(752, 324)
 
-[node name="Marker2D - (1, 2)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(50, 100)
+[node name="Marker2D - (1, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(752, 524)
 
-[node name="Marker2D - (1, 3)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(50, 150)
+[node name="Marker2D - (1, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(752, 724)
 
-[node name="Marker2D - (1, 4)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(50, 200)
+[node name="Marker2D - (1, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(752, 924)
 
-[node name="Marker2D - (2, 0)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(100, 0)
+[node name="Marker2D - (2, 0)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(952, 124)
 
-[node name="Marker2D - (2, 1)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(100, 50)
+[node name="Marker2D - (2, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(952, 324)
 
-[node name="Marker2D - (2, 2)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(100, 100)
+[node name="Marker2D - (2, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(952, 524)
 
-[node name="Marker2D - (2, 3)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(100, 150)
+[node name="Marker2D - (2, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(952, 724)
 
-[node name="Marker2D - (2, 4)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(100, 200)
+[node name="Marker2D - (2, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(952, 924)
 
-[node name="Marker2D - (3, 0)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(150, 0)
+[node name="Marker2D - (3, 0)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1152, 124)
 
-[node name="Marker2D - (3, 1)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(150, 50)
+[node name="Marker2D - (3, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1152, 324)
 
-[node name="Marker2D - (3, 2)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(150, 100)
+[node name="Marker2D - (3, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1152, 524)
 
-[node name="Marker2D - (3, 3)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(150, 150)
+[node name="Marker2D - (3, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1152, 724)
 
-[node name="Marker2D - (3, 4)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(150, 200)
+[node name="Marker2D - (3, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1152, 924)
 
-[node name="Marker2D - (4, 0)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(200, 0)
+[node name="Marker2D - (4, 0)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1352, 124)
 
-[node name="Marker2D - (4, 1)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(200, 50)
+[node name="Marker2D - (4, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1352, 324)
 
-[node name="Marker2D - (4, 2)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(200, 100)
+[node name="Marker2D - (4, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1352, 524)
 
-[node name="Marker2D - (4, 3)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(200, 150)
+[node name="Marker2D - (4, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1352, 724)
 
-[node name="Marker2D - (4, 4)2" type="Marker2D" parent="MatchingArea"]
-position = Vector2(200, 200)
+[node name="Marker2D - (4, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(1352, 924)

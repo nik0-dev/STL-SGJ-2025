@@ -26,7 +26,6 @@ var side: Data.CardSide = Data.CardSide.Front:
 @onready var image: TextureRect = $Container/CardContents/Front/ImageHolder/Image
 
 func _ready() -> void:
-	side = Data.CardSide.Back
 	image.visible = false if data != null && data.image == null else true
 	button.pressed.connect(flip)
 	

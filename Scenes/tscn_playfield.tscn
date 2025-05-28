@@ -173,16 +173,6 @@ offset_bottom = 1749.0
 scale = Vector2(0.264344, 0.669115)
 color = Color(0.16, 0.10544, 0.0608, 1)
 
-[node name="EnemyHealth" type="ProgressBar" parent="."]
-offset_left = 1286.0
-offset_top = 18.0
-offset_right = 1711.0
-offset_bottom = 45.0
-theme_override_styles/background = SubResource("StyleBoxFlat_qrs3f")
-theme_override_styles/fill = SubResource("StyleBoxFlat_empmn")
-value = 22.04
-show_percentage = false
-
 [node name="PlayerHealth" type="ProgressBar" parent="."]
 offset_left = 1286.0
 offset_top = 985.0
@@ -191,4 +181,14 @@ offset_bottom = 1012.0
 theme_override_styles/background = SubResource("StyleBoxFlat_qrs3f")
 theme_override_styles/fill = SubResource("StyleBoxFlat_empmn")
 value = 80.0
+show_percentage = false
+
+[node name="EnemyHealth" type="ProgressBar" parent="."]
+offset_left = 1286.0
+offset_top = 18.0
+offset_right = 1711.0
+offset_bottom = 45.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qrs3f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_empmn")
+value = 22.04
 show_percentage = false

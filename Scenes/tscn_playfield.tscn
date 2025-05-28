@@ -1,18 +1,97 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf5tc0su7a3f7"]
+[gd_scene load_steps=8 format=3 uid="uid://bf5tc0su7a3f7"]
 
 [ext_resource type="Script" uid="uid://baotjuk56w6ds" path="res://Scripts/array_tool_script_node2d.gd" id="1_2bq7k"]
 [ext_resource type="Script" uid="uid://bir6hglg6dbcj" path="res://Scripts/playfield.gd" id="1_vr385"]
+[ext_resource type="Texture2D" uid="uid://dbhyh8hhvtgbn" path="res://Art/Characters/pug_thug_body.png" id="3_1ch7u"]
+[ext_resource type="Texture2D" uid="uid://cwyaybb8wt0ek" path="res://Art/Characters/pug_thug_hand.png" id="3_dtgh6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtgh6"]
+bg_color = Color(0.35, 0.221083, 0.0525, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrs3f"]
+bg_color = Color(0.151276, 0.151276, 0.151276, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_empmn"]
+bg_color = Color(0, 1, 0.583333, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
 
 [node name="TscnPlayfield" type="Node2D" node_paths=PackedStringArray("matching_array")]
 script = ExtResource("1_vr385")
 matching_array = NodePath("MatchingArea")
 
-[node name="DummyMarker" type="Marker2D" parent="."]
-position = Vector2(2, 0)
+[node name="Backdrop" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.179885, 0.235145, 0.0835772, 1)
+
+[node name="TableFill" type="ColorRect" parent="."]
+offset_left = -11.0
+offset_top = 823.0
+offset_right = 1917.19
+offset_bottom = 1123.0
+color = Color(0.456436, 0.29271, 0.0795111, 1)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 42.0
+offset_top = 294.0
+offset_right = 2042.0
+offset_bottom = 834.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dtgh6")
+
+[node name="Tablefield" type="ColorRect" parent="."]
+offset_left = 455.0
+offset_top = 25.0
+offset_right = 1455.0
+offset_bottom = 1025.0
+color = Color(0.77, 0.48587, 0.3542, 1)
+
+[node name="Tablefield2" type="ColorRect" parent="."]
+offset_left = 1539.0
+offset_top = 723.0
+offset_right = 2539.0
+offset_bottom = 1723.0
+scale = Vector2(0.264344, 0.669115)
+color = Color(0, 0, 0, 1)
 
 [node name="MatchingArea" type="Node" parent="." node_paths=PackedStringArray("instance_node")]
 script = ExtResource("1_2bq7k")
-instance_node = NodePath("../DummyMarker")
+instance_node = NodePath("")
 dimensions = Vector2i(5, 5)
 spacing = 200
 
@@ -90,3 +169,35 @@ position = Vector2(1352, 724)
 
 [node name="Marker2D - (4, 4)" type="Marker2D" parent="MatchingArea"]
 position = Vector2(1352, 924)
+
+[node name="Enemy" type="Node" parent="."]
+
+[node name="PugThugBody" type="Sprite2D" parent="Enemy"]
+position = Vector2(1696, 138)
+scale = Vector2(0.5, 0.479)
+texture = ExtResource("3_1ch7u")
+
+[node name="PugThugHand" type="Sprite2D" parent="Enemy"]
+position = Vector2(1683, 154)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_dtgh6")
+
+[node name="EnemyHealth" type="ProgressBar" parent="."]
+offset_left = 1473.0
+offset_top = 26.0
+offset_right = 1898.0
+offset_bottom = 53.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qrs3f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_empmn")
+value = 22.04
+show_percentage = false
+
+[node name="PlayerHealth" type="ProgressBar" parent="."]
+offset_left = 1473.0
+offset_top = 993.0
+offset_right = 1898.0
+offset_bottom = 1020.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qrs3f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_empmn")
+value = 80.0
+show_percentage = false

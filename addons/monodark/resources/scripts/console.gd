@@ -38,7 +38,6 @@ func _ready():
 	_connect_signals()
 	_add_base_commands()
 	if _use_fallback_key && _echo_cfg_logs: broadcast_warning(_get_md_no_mapping_warning())
-	Console.hide()
 	
 func _add_base_commands():
 	suppress_cmd_cfg_logs()

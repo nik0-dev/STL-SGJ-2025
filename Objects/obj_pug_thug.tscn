@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnishrnok67cb"]
+
+[ext_resource type="Texture2D" uid="uid://dbhyh8hhvtgbn" path="res://Art/Characters/pug_thug_body.png" id="1_4f41n"]
+[ext_resource type="Script" uid="uid://cg26nv86pskar" path="res://Scripts/pug_thug.gd" id="1_w622v"]
+[ext_resource type="Texture2D" uid="uid://cwyaybb8wt0ek" path="res://Art/Characters/pug_thug_hand.png" id="2_w622v"]
+
+[node name="PugThug" type="Node2D"]
+script = ExtResource("1_w622v")
+
+[node name="PugThugBody" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.479)
+texture = ExtResource("1_4f41n")
+
+[node name="PugThugHand" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_w622v")

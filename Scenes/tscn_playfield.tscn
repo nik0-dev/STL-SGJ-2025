@@ -6,9 +6,26 @@
 [node name="TscnPlayfield" type="Node2D"]
 
 [node name="TemplateCard" parent="." instance=ExtResource("1_2bq7k")]
-position = Vector2(280, 370)
+position = Vector2(386, 204)
 scale = Vector2(0.25, 0.25)
 script = ExtResource("2_vr385")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-playback_type = 1
+[node name="TemplateCard2" parent="." instance=ExtResource("1_2bq7k")]
+position = Vector2(588, 366)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_vr385")
+
+[node name="TemplateCard3" parent="." instance=ExtResource("1_2bq7k")]
+position = Vector2(570, 222)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_vr385")
+
+[node name="TemplateCard4" parent="." instance=ExtResource("1_2bq7k")]
+position = Vector2(274, 317)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_vr385")
+
+[node name="TemplateCard5" parent="." instance=ExtResource("1_2bq7k")]
+position = Vector2(442, 365)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_vr385")

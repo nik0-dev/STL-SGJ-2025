@@ -82,12 +82,12 @@ offset_bottom = 1025.0
 color = Color(0.77, 0.48587, 0.3542, 1)
 
 [node name="Tablefield2" type="ColorRect" parent="."]
-offset_left = 1539.0
-offset_top = 723.0
-offset_right = 2539.0
-offset_bottom = 1723.0
+offset_left = 1536.0
+offset_top = 757.0
+offset_right = 2536.0
+offset_bottom = 1757.0
 scale = Vector2(0.264344, 0.669115)
-color = Color(0, 0, 0, 1)
+color = Color(0.16, 0.10544, 0.0608, 1)
 
 [node name="MatchingArea" type="Node" parent="." node_paths=PackedStringArray("instance_node")]
 script = ExtResource("1_2bq7k")

@@ -1,31 +1,87 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf5tc0su7a3f7"]
+[gd_scene load_steps=2 format=3 uid="uid://bf5tc0su7a3f7"]
 
-[ext_resource type="PackedScene" uid="uid://bu28jmi2shbnf" path="res://Objects/obj_template_card.tscn" id="1_2bq7k"]
-[ext_resource type="Script" uid="uid://ce1q5kphlvo4r" path="res://Scripts/card.gd" id="2_vr385"]
+[ext_resource type="Script" uid="uid://baotjuk56w6ds" path="res://Scripts/array_tool_script_node2d.gd" id="1_2bq7k"]
 
 [node name="TscnPlayfield" type="Node2D"]
 
-[node name="TemplateCard" parent="." instance=ExtResource("1_2bq7k")]
-position = Vector2(386, 204)
-scale = Vector2(0.25, 0.25)
-script = ExtResource("2_vr385")
+[node name="DummyMarker" type="Marker2D" parent="."]
 
-[node name="TemplateCard2" parent="." instance=ExtResource("1_2bq7k")]
-position = Vector2(588, 366)
-scale = Vector2(0.25, 0.25)
-script = ExtResource("2_vr385")
+[node name="MatchingArea" type="Node" parent="." node_paths=PackedStringArray("instance_node")]
+script = ExtResource("1_2bq7k")
+instance_node = NodePath("../DummyMarker")
+dimensions = Vector2i(5, 5)
+spacing = 50
 
-[node name="TemplateCard3" parent="." instance=ExtResource("1_2bq7k")]
-position = Vector2(570, 222)
-scale = Vector2(0.25, 0.25)
-script = ExtResource("2_vr385")
+[node name="Marker2D - (0, 0)2" type="Marker2D" parent="MatchingArea"]
 
-[node name="TemplateCard4" parent="." instance=ExtResource("1_2bq7k")]
-position = Vector2(274, 317)
-scale = Vector2(0.25, 0.25)
-script = ExtResource("2_vr385")
+[node name="Marker2D - (0, 1)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(0, 50)
 
-[node name="TemplateCard5" parent="." instance=ExtResource("1_2bq7k")]
-position = Vector2(442, 365)
-scale = Vector2(0.25, 0.25)
-script = ExtResource("2_vr385")
+[node name="Marker2D - (0, 2)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(0, 100)
+
+[node name="Marker2D - (0, 3)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(0, 150)
+
+[node name="Marker2D - (0, 4)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(0, 200)
+
+[node name="Marker2D - (1, 0)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(50, 0)
+
+[node name="Marker2D - (1, 1)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(50, 50)
+
+[node name="Marker2D - (1, 2)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(50, 100)
+
+[node name="Marker2D - (1, 3)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(50, 150)
+
+[node name="Marker2D - (1, 4)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(50, 200)
+
+[node name="Marker2D - (2, 0)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(100, 0)
+
+[node name="Marker2D - (2, 1)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(100, 50)
+
+[node name="Marker2D - (2, 2)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(100, 100)
+
+[node name="Marker2D - (2, 3)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(100, 150)
+
+[node name="Marker2D - (2, 4)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(100, 200)
+
+[node name="Marker2D - (3, 0)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(150, 0)
+
+[node name="Marker2D - (3, 1)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(150, 50)
+
+[node name="Marker2D - (3, 2)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(150, 100)
+
+[node name="Marker2D - (3, 3)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(150, 150)
+
+[node name="Marker2D - (3, 4)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(150, 200)
+
+[node name="Marker2D - (4, 0)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 0)
+
+[node name="Marker2D - (4, 1)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 50)
+
+[node name="Marker2D - (4, 2)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 100)
+
+[node name="Marker2D - (4, 3)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 150)
+
+[node name="Marker2D - (4, 4)2" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 200)

@@ -3,19 +3,23 @@ extends Node
 var active_channels: Array[AudioStreamPlayer] = [] 
 var inactive_channels: Array[AudioStreamPlayer] = []
 
+var music_channel: AudioStreamPlayer 
+
 const POOLED_AUDIO_CHANNELS : int = 16
 
 func _ready() -> void:
 	for i in range(0, POOLED_AUDIO_CHANNELS):
-		instance_audio_channel()
+		var asp = instance_audio_channel()
+		inactive_channels.append(asp)
+		asp.finished.connect(swap_to_inactive.bind(asp))
+	music_channel = instance_audio_channel()
 
-func instance_audio_channel():
+func instance_audio_channel() -> AudioStreamPlayer:
 	var asp = AudioStreamPlayer.new()
 	var count : int = inactive_channels.size() + active_channels.size()
 	asp.name = "AudioStreamChannel" + str(count)
 	add_child(asp) 
-	inactive_channels.append(asp)
-	asp.finished.connect(swap_to_inactive.bind(asp))
+	return asp
 
 func swap_to_inactive(player: AudioStreamPlayer):
 	if active_channels.has(player):

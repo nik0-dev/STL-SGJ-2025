@@ -45,7 +45,7 @@ func flip():
 			Data.CardSide.Back:
 				animation_player.play("flip_to_front")
 				side = Data.CardSide.Front
-		AudioManager.play_audio_random_pitch(FLIP_SOUND, 0.75, 1.5)
+		AudioManager.play_audio_random_pitch(FLIP_SOUND, 0.95, 1.25)
 
 func add_tag(tag: String): 
 	data.tags.append(tag)

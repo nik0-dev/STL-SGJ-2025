@@ -40,10 +40,10 @@ func play_audio_impl(player: AudioStreamPlayer, stream: AudioStream):
 func play_audio(stream: AudioStream):
 	play_audio_impl(get_free_channel(), stream)
 
-func play_audio_random_pitch(stream: AudioStream, min: float, max: float):
+func play_audio_random_pitch(stream: AudioStream, min_v: float, max_v: float):
 	var free_channel = get_free_channel()
 	if free_channel != null:
-		free_channel.pitch_scale = randf_range(min, max)
+		free_channel.pitch_scale = randf_range(min_v, max_v)
 		play_audio_impl(free_channel, stream)
 		await free_channel.finished
 		free_channel.pitch_scale = 1.0

@@ -17,6 +17,7 @@ var side: Data.CardSide = Data.CardSide.Front:
 		if side != value:
 			flip()
 			side = value
+		revealed = Data.CardSide.Front && is_matchable  
 	get:
 		return side
 
@@ -24,6 +25,9 @@ var side: Data.CardSide = Data.CardSide.Front:
 @onready var button: Button = $Container/Button
 @onready var image_placeholder: Label = $Container/CardContents/Front/ImageHolder/ImagePlaceholder
 @onready var image: TextureRect = $Container/CardContents/Front/ImageHolder/Image
+
+var is_matchable : bool = false
+var revealed : bool = false
 
 func _ready() -> void:
 	image.visible = false if data != null && data.image == null else true

@@ -23,7 +23,7 @@ border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34ysb"]
-bg_color = Color(0.144062, 0.144063, 0.144062, 1)
+bg_color = Color(0.145098, 0.145098, 0.145098, 0.611765)
 border_width_left = 1
 border_width_right = 1
 border_color = Color(0, 0, 0, 1)
@@ -33,13 +33,12 @@ border_color = Color(0, 0, 0, 1)
 [node name="ConsoleInterface" type="Control"]
 custom_minimum_size = Vector2(280, 100)
 layout_mode = 3
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = 918.0
-offset_top = 368.0
-offset_right = -2.0
-offset_bottom = 868.0
+anchor_bottom = 1.0
+offset_bottom = -675.0
 grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_oagc4")
 script = ExtResource("2_434uk")
 

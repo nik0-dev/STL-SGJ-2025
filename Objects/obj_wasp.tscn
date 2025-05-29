@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cib5q5cmdko74"]
+
+[ext_resource type="Texture2D" uid="uid://uyidvblj4cnp" path="res://Art/Characters/Wasp/wasp_wings.png" id="1_ka7fh"]
+[ext_resource type="Texture2D" uid="uid://dg5f5fghvj0iv" path="res://Art/Characters/Wasp/wasp_body.png" id="2_48fww"]
+[ext_resource type="Texture2D" uid="uid://ok0qx65b6jns" path="res://Art/Characters/Wasp/wasp_arm.png" id="3_i5jxh"]
+
+[node name="Wasp" type="Node2D"]
+
+[node name="Wings" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_ka7fh")
+
+[node name="Body" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_48fww")
+
+[node name="Arm" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, -6)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_i5jxh")

@@ -2,9 +2,9 @@ extends Node2D
 
 const BASIC_CARD : PackedScene = preload("res://Objects/obj_template_card.tscn")
 
-@export var matching_array : Node 
-@onready var enemy_health: ProgressBar = $EnemyHealth
-@onready var player_health: ProgressBar = $PlayerHealth
+@export var matching_array : Node2D 
+@export var enemy_healthbar : ProgressBar
+@export var player_healthbar : ProgressBar 
 
 func _ready() -> void:
 	for child in matching_array.get_children():
@@ -13,10 +13,10 @@ func _ready() -> void:
 		await get_tree().create_timer(0.02).timeout
 		card.side = Data.CardSide.Back
 		
-	BattleManager.player_bar = player_health
-	BattleManager.player_bar.max_value = BattleManager.player.max_health
-	BattleManager.player_bar.value = BattleManager.player.health
+	BattleManager.player_healthbar = player_healthbar
+	BattleManager.player_healthbar.max_value = BattleManager.player_health.max_health
+	BattleManager.player_healthbar.value = BattleManager.player_health.health
 	
-	BattleManager.enemy_bar = enemy_health
-	BattleManager.enemy_bar.max_value = BattleManager.enemy.max_health
-	BattleManager.enemy_bar.value = BattleManager.enemy.health
+	BattleManager.enemy_healthbar = enemy_healthbar
+	BattleManager.enemy_healthbar.max_value = BattleManager.enemy_health.max_health
+	BattleManager.enemy_healthbar.value = BattleManager.enemy_health.health

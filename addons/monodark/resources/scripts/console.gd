@@ -20,6 +20,7 @@ var description : String = "Unable to fetch description..."
 
 var commands = {}
 var history : Array[String] = []
+var history_idx : int = 0
 
 const CMD_REF_COLOR = Color.CYAN
 
@@ -38,6 +39,7 @@ func _ready():
 	_connect_signals()
 	_add_base_commands()
 	if _use_fallback_key && _echo_cfg_logs: broadcast_warning(_get_md_no_mapping_warning())
+	Console.disable()
 	
 func _add_base_commands():
 	suppress_cmd_cfg_logs()
@@ -113,6 +115,8 @@ func remove_command(cmd: ConsoleCommand):
 
 ## Parses text and tries to call a command in the registry.
 func process_cmd(cmd: String):
+	history.append(cmd)
+	
 	var text_split = cmd.split(" ")
 	var text_command = text_split[0]
 	if commands.has(text_command):
@@ -245,3 +249,14 @@ func _input(event):
 		if InputMap.has_action("console_toggle"):
 			if Input.is_action_just_pressed("console_toggle"):
 				toggle()
+	if event is InputEventKey:
+		match event.physical_keycode:
+			KEY_DOWN: 
+				history_idx = clamp(history_idx + 1, 0, history.size() - 1)
+				if history.size() > 0:
+					Console.interface.input.text = history[history_idx]
+			KEY_UP: 
+				history_idx = clamp(history_idx - 1, 0, history.size() - 1)
+				if history.size() > 0:
+					Console.interface.input.text = history[history_idx]
+				

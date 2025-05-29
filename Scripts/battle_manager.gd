@@ -2,10 +2,14 @@ extends Node
 
 signal event_triggered(event: EventType)
 
-var player := HealthComponent.new()
-var enemy := HealthComponent.new()
-var player_bar : ProgressBar
-var enemy_bar : ProgressBar
+var player_health := HealthComponent.new()
+var enemy_health := HealthComponent.new()
+
+var enemy_sprite : Node2D
+var player_sprite : Node2D
+
+var player_healthbar : ProgressBar
+var enemy_healthbar : ProgressBar
 
 enum EventType {
 	BattleStart,
@@ -49,26 +53,26 @@ func _ready() -> void:
 	
 	Console.add_command(
 		"damage_component",
-		func(name, amt):
-			damage_health_component(str_to_ownership_target(name), int(amt)),
+		func(v_name, amt):
+			damage_health_component(str_to_ownership_target(v_name), int(amt)),
 		{"name": TYPE_STRING, "amt": TYPE_INT}
 	)
 	
-	player.max_health = 20
-	player.health = player.max_health
+	player_health.max_health = 20
+	player_health.health = player_health.max_health
 	
-	enemy.max_health = 10
-	enemy.health = enemy.max_health
+	enemy_health.max_health = 10
+	enemy_health.health = enemy_health.max_health
 	
-	player.health_changed.connect(func(amt): 
+	player_health.health_changed.connect(func(amt): 
 		Console.log_msg("Player Health Is Now: " + str(amt), Color.YELLOW)
-		if player_bar != null:
-			player_bar.value = amt
+		if player_healthbar != null:
+			player_healthbar.value = amt
 	)
-	enemy.health_changed.connect(func(amt): 
+	enemy_health.health_changed.connect(func(amt): 
 		Console.log_msg("Enemy Health Is Now: " + str(amt), Color.YELLOW)
-		if enemy_bar.value != null:
-			enemy_bar.value = amt
+		if enemy_healthbar.value != null:
+			enemy_healthbar.value = amt
 	)
 
 func get_targets(card: Card) -> Array[HealthComponent]:
@@ -87,12 +91,12 @@ func get_targets(card: Card) -> Array[HealthComponent]:
 func get_ownership_target(ownership: Data.BattlerType) -> HealthComponent:
 	match ownership:
 		Data.BattlerType.None: return null
-		Data.BattlerType.Player: return player
-		Data.BattlerType.Enemy: return enemy
+		Data.BattlerType.Player: return player_health
+		Data.BattlerType.Enemy: return enemy_health
 	return null
 
-func get_opponent(player: Data.BattlerType) -> Data.BattlerType:
-	match player:
+func get_opponent(v_player: Data.BattlerType) -> Data.BattlerType:
+	match v_player:
 		Data.BattlerType.None: return Data.BattlerType.None
 		Data.BattlerType.Player: return Data.BattlerType.Enemy
 		Data.BattlerType.Enemy: return Data.BattlerType.Player
@@ -102,8 +106,8 @@ func damage_health_component(component: HealthComponent, amt: int):
 	if component != null:
 		component.take_damage(amt)
 
-func str_to_ownership_target(str: String) -> HealthComponent:
-	if Data.BattlerType.keys().has(str):
-		return get_ownership_target(Data.BattlerType[str])
+func str_to_ownership_target(v_str: String) -> HealthComponent:
+	if Data.BattlerType.keys().has(v_str):
+		return get_ownership_target(Data.BattlerType[v_str])
 	return null
 	

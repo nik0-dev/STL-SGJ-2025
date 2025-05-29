@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwyaybb8wt0ek"
-path="res://.godot/imported/pug_thug_hand.png-c01d1871bb45261288f9c4f9f64905fc.ctex"
+uid="uid://dg5f5fghvj0iv"
+path="res://.godot/imported/wasp_body.png-fdbe121780e6ca36972907e7de5cfcbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Characters/pug_thug_hand.png"
-dest_files=["res://.godot/imported/pug_thug_hand.png-c01d1871bb45261288f9c4f9f64905fc.ctex"]
+source_file="res://Art/Characters/Wasp/wasp_body.png"
+dest_files=["res://.godot/imported/wasp_body.png-fdbe121780e6ca36972907e7de5cfcbd.ctex"]
 
 [params]
 

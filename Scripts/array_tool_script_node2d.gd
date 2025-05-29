@@ -1,9 +1,8 @@
-@tool extends Node
+@tool extends Node2D
 
 @export var instance_node: Node2D = null
-@export var offset := Vector2i(0,0)
 @export var dimensions := Vector2i(0,0)
-@export var spacing: int = 0
+@export var spacing := Vector2i(0,0)
 
 @export_category("")
 @export_tool_button("Generate Array", "ItemList")
@@ -23,7 +22,7 @@ func array_tool_button_generate_impl():
 			add_child(new_in)
 			new_in.owner = get_tree().edited_scene_root
 			new_in.name = new_in.get_class() + " - " + str(Vector2i(x,y))
-			var new_x = offset.x + (x * spacing)
-			var new_y = offset.x + (y * spacing)
+			var new_x = x * spacing.x
+			var new_y = y * spacing.y
 			new_in.position = Vector2(new_x, new_y)
 			

@@ -1,6 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://bu28jmi2shbnf"]
 
 [ext_resource type="Script" uid="uid://ce1q5kphlvo4r" path="res://Scripts/card.gd" id="1_poweq"]
+[ext_resource type="Texture2D" uid="uid://droi2ua32dcav" path="res://Art/Sprites/spr_card_back.png" id="2_hxgmw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv45m"]
 bg_color = Color(1, 1, 1, 1)
@@ -48,10 +49,6 @@ shadow_offset = Vector2(5, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wd0vl"]
 font_size = 30
-
-[sub_resource type="LabelSettings" id="LabelSettings_tfrst"]
-font_size = 30
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2545"]
 
@@ -116,7 +113,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Container/CardContents/BackPlaceholder:visible")
+tracks/3/path = NodePath("Container/CardContents/TextureRect:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -128,7 +125,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Container/CardContents/BackPlaceholder:scale")
+tracks/4/path = NodePath("Container/CardContents/TextureRect:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -179,24 +176,24 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Container/CardContents/BackPlaceholder:visible")
+tracks/3/path = NodePath("Container/CardContents/TextureRect:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(0.366, 0.176),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Container/CardContents/BackPlaceholder:scale")
+tracks/4/path = NodePath("Container/CardContents/TextureRect:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.366, 0.175),
+"transitions": PackedFloat32Array(0.176, 0.366),
 "update": 0,
 "values": [Vector2(-1, 1), Vector2(1, 1)]
 }
@@ -234,19 +231,19 @@ tracks/2/path = NodePath("Container/CardContents/Front:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.233333),
-"transitions": PackedFloat32Array(0.366, 0.176),
+"times": PackedFloat32Array(0, 0.23, 0.233333),
+"transitions": PackedFloat32Array(0.366, 0.176, 0.176),
 "update": 1,
-"values": [false, true]
+"values": [false, true, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Container/CardContents/BackPlaceholder:visible")
+tracks/3/path = NodePath("Container/CardContents/TextureRect:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.233333),
+"times": PackedFloat32Array(0, 0.23),
 "transitions": PackedFloat32Array(0.366, 0.176),
 "update": 1,
 "values": [true, false]
@@ -254,12 +251,12 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Container/CardContents/BackPlaceholder:scale")
+tracks/4/path = NodePath("Container/CardContents/TextureRect:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.366, 0.175),
+"transitions": PackedFloat32Array(0.366, 0.176),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(-1, 1)]
 }
@@ -350,7 +347,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackPlaceholder" type="Label" parent="Container/CardContents"]
+[node name="TextureRect" type="TextureRect" parent="Container/CardContents"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -358,11 +355,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(125, 175)
-text = "CARD_BACK"
-label_settings = SubResource("LabelSettings_tfrst")
-horizontal_alignment = 1
-vertical_alignment = 1
+pivot_offset = Vector2(140, 200)
+texture = ExtResource("2_hxgmw")
 
 [node name="Button" type="Button" parent="Container"]
 layout_mode = 1

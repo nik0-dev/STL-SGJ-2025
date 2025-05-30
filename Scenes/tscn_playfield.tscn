@@ -1,0 +1,201 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf5tc0su7a3f7"]
+
+[ext_resource type="Script" uid="uid://baotjuk56w6ds" path="res://Scripts/array_tool_script_node2d.gd" id="1_2bq7k"]
+[ext_resource type="Script" uid="uid://bir6hglg6dbcj" path="res://Scripts/playfield.gd" id="1_vr385"]
+[ext_resource type="PackedScene" uid="uid://cib5q5cmdko74" path="res://Objects/obj_wasp.tscn" id="3_1ch7u"]
+[ext_resource type="Script" uid="uid://dvacxajfooja3" path="res://Scripts/health_tween.gd" id="4_dtgh6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtgh6"]
+bg_color = Color(0.35, 0.221083, 0.0525, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrs3f"]
+bg_color = Color(0.151276, 0.151276, 0.151276, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_empmn"]
+bg_color = Color(1, 1, 1, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[node name="TscnPlayfield" type="Node2D" node_paths=PackedStringArray("matching_array", "enemy_healthbar", "player_healthbar")]
+script = ExtResource("1_vr385")
+matching_array = NodePath("MatchingArea")
+enemy_healthbar = NodePath("EnemyHealth")
+player_healthbar = NodePath("PlayerHealth")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.179885, 0.235145, 0.0835772, 1)
+
+[node name="Enemy" type="Marker2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1470.54, 294.72)
+
+[node name="Wasp" parent="Enemy" instance=ExtResource("3_1ch7u")]
+
+[node name="TableFill" type="ColorRect" parent="."]
+offset_left = -11.0
+offset_top = 823.0
+offset_right = 1917.19
+offset_bottom = 1123.0
+color = Color(0.456436, 0.29271, 0.0795111, 1)
+
+[node name="TableTop" type="Panel" parent="."]
+offset_left = 43.0
+offset_top = 410.0
+offset_right = 2043.0
+offset_bottom = 950.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dtgh6")
+
+[node name="Tablefield" type="ColorRect" parent="."]
+offset_left = 36.0
+offset_top = 38.0
+offset_right = 1036.0
+offset_bottom = 1038.0
+color = Color(0.77, 0.48587, 0.3542, 1)
+
+[node name="MatchingArea" type="Node2D" parent="."]
+position = Vector2(137, 139)
+script = ExtResource("1_2bq7k")
+dimensions = Vector2i(5, 5)
+spacing = Vector2i(200, 200)
+
+[node name="Marker2D - (0, 0)" type="Marker2D" parent="MatchingArea"]
+
+[node name="Marker2D - (0, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(0, 200)
+
+[node name="Marker2D - (0, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(0, 400)
+
+[node name="Marker2D - (0, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(0, 600)
+
+[node name="Marker2D - (0, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(0, 800)
+
+[node name="Marker2D - (1, 0)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 0)
+
+[node name="Marker2D - (1, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 200)
+
+[node name="Marker2D - (1, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 400)
+
+[node name="Marker2D - (1, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 600)
+
+[node name="Marker2D - (1, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(200, 800)
+
+[node name="Marker2D - (2, 0)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(400, 0)
+
+[node name="Marker2D - (2, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(400, 200)
+
+[node name="Marker2D - (2, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(400, 400)
+
+[node name="Marker2D - (2, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(400, 600)
+
+[node name="Marker2D - (2, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(400, 800)
+
+[node name="Marker2D - (3, 0)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(600, 0)
+
+[node name="Marker2D - (3, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(600, 200)
+
+[node name="Marker2D - (3, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(600, 400)
+
+[node name="Marker2D - (3, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(600, 600)
+
+[node name="Marker2D - (3, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(600, 800)
+
+[node name="Marker2D - (4, 0)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(800, 0)
+
+[node name="Marker2D - (4, 1)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(800, 200)
+
+[node name="Marker2D - (4, 2)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(800, 400)
+
+[node name="Marker2D - (4, 3)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(800, 600)
+
+[node name="Marker2D - (4, 4)" type="Marker2D" parent="MatchingArea"]
+position = Vector2(800, 800)
+
+[node name="PlayerDummySprite" type="ColorRect" parent="."]
+offset_left = 1349.0
+offset_top = 749.0
+offset_right = 2349.0
+offset_bottom = 1749.0
+scale = Vector2(0.264344, 0.669115)
+color = Color(0.16, 0.10544, 0.0608, 1)
+
+[node name="PlayerHealth" type="ProgressBar" parent="."]
+top_level = true
+offset_left = 1286.0
+offset_top = 985.0
+offset_right = 1711.0
+offset_bottom = 1012.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qrs3f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_empmn")
+value = 100.0
+show_percentage = false
+script = ExtResource("4_dtgh6")
+
+[node name="EnemyHealth" type="ProgressBar" parent="."]
+offset_left = 1251.0
+offset_top = 49.0
+offset_right = 1676.0
+offset_bottom = 76.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qrs3f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_empmn")
+value = 100.0
+show_percentage = false
+script = ExtResource("4_dtgh6")

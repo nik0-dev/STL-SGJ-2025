@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardMetadata" load_steps=3 format=3 uid="uid://cgsbn1fa315kc"]
+
+[ext_resource type="Texture2D" uid="uid://blyx7awso7gwx" path="res://Art/KenneyNL-Icons/sword.png" id="1_elbqm"]
+[ext_resource type="Script" uid="uid://dpkrvu1818fgq" path="res://Scripts/card_metadata.gd" id="1_v668e"]
+
+[resource]
+script = ExtResource("1_v668e")
+image = ExtResource("1_elbqm")
+color = Color(1, 1, 1, 1)
+tags = Array[String]([])
+target_type = 2
+permanent = false
+metadata/_custom_type_script = "uid://dpkrvu1818fgq"

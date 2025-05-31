@@ -11,6 +11,10 @@ var player_sprite : Node2D
 var player_healthbar : ProgressBar
 var enemy_healthbar : ProgressBar
 
+var turn : Data.BattlerType = Data.BattlerType.None
+
+signal turn_changed(turn: Data.BattlerType)
+
 enum EventType {
 	BattleStart,
 	CardsReplenished,
@@ -56,6 +60,20 @@ func _ready() -> void:
 		func(v_name, amt):
 			damage_health_component(str_to_ownership_target(v_name), int(amt)),
 		{"name": TYPE_STRING, "amt": TYPE_INT}
+	)
+	
+	Console.add_command(
+		"turn",
+		func():
+			Console.log_msg(Data.BattlerType.keys()[turn], Color.YELLOW)
+	)
+	
+	Console.add_command(
+		"change_turn",
+		func(key):
+			if Data.BattlerType.has(key):
+				turn = Data.BattlerType[key],
+		{"name": TYPE_STRING}
 	)
 	
 	player_health.max_health = 20
@@ -106,8 +124,15 @@ func damage_health_component(component: HealthComponent, amt: int):
 	if component != null:
 		component.take_damage(amt)
 
+func heal_health_component(component: HealthComponent, amt: int):
+	if component != null:
+		component.heal(amt)
+
 func str_to_ownership_target(v_str: String) -> HealthComponent:
 	if Data.BattlerType.keys().has(v_str):
 		return get_ownership_target(Data.BattlerType[v_str])
 	return null
-	
+
+func progress_turn(): 
+	turn = get_opponent(turn)
+	turn_changed.emit(turn)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1e1x1yyxojy8"]
+
+[ext_resource type="PackedScene" uid="uid://bu28jmi2shbnf" path="res://Objects/obj_template_card.tscn" id="1_akcsw"]
+[ext_resource type="Script" uid="uid://ckxs2jtk8nbj5" path="res://Scripts/basic_heal_card.gd" id="2_sm2ly"]
+
+[node name="TemplateCard" instance=ExtResource("1_akcsw")]
+script = ExtResource("2_sm2ly")

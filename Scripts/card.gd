@@ -49,10 +49,21 @@ func _ready() -> void:
 				process_events[event].call()
 	)
 	
-	button.pressed.connect(flip)
+	button.pressed.connect(func():
+		ownership = Data.BattlerType.Player
+		deactivate_button()
+		flip()
+		await animation_player.animation_finished
+		BattleManager.progress_turn()
 	
+	)
+	
+func _process(delta: float) -> void:
+	button.disabled = BattleManager.turn == Data.BattlerType.Enemy
+
 func flip():
 	if !animation_player.is_playing():
+		AudioManager.play_audio_random_pitch(FLIP_SOUND, 0.95, 1.25)
 		match side:
 			Data.CardSide.Front: 
 				animation_player.play("flip_to_back")
@@ -62,7 +73,13 @@ func flip():
 				side = Data.CardSide.Front
 				if activatable && ownership != Data.BattlerType.None:
 					activated.emit()
-		AudioManager.play_audio_random_pitch(FLIP_SOUND, 0.95, 1.25)
+					var tween = get_tree().create_tween()
+					var m = modulate
+					m.a = 0
+					tween.tween_property(self, "modulate", m, 1.0)
+					await tween.finished
+					tween.kill()
+					queue_free()
 
 func add_tag(tag: String): 
 	data.tags.append(tag)

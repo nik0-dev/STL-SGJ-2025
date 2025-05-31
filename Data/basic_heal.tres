@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardMetadata" load_steps=3 format=3 uid="uid://cjk1o3dfgtfpo"]
+
+[ext_resource type="Texture2D" uid="uid://b2j3d2doj2pvm" path="res://Art/KenneyNL-Icons/suit_hearts.png" id="1_ftt0b"]
+[ext_resource type="Script" uid="uid://dpkrvu1818fgq" path="res://Scripts/card_metadata.gd" id="2_2jkwy"]
+
+[resource]
+script = ExtResource("2_2jkwy")
+image = ExtResource("1_ftt0b")
+color = Color(1, 1, 1, 1)
+tags = Array[String]([])
+target_type = 1
+permanent = false
+metadata/_custom_type_script = "uid://dpkrvu1818fgq"
